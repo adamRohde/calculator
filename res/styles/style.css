@@ -1,0 +1,32 @@
+html {
+    background-color: #1e1e1e;
+}
+
+.navbar {
+    background-color: #3d424d;
+    height: auto;
+}
+
+.navbar .btn {
+    background-color: #3d424d;
+}
+
+.navbar .burger {
+    width: 2em;
+    height: 0.2em;
+    background-color: #1e1e1e;
+    margin: 0.25em 0;
+    border-radius: 0.2em;
+}
+
+.navbar div {
+    background-color: #3d424d;
+}
+
+.navbar input {
+    color: #e0d4e4;
+}
+
+.navbar label {
+    color: #e0d4e4;
+}
