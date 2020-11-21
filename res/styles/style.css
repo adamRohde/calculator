@@ -3,12 +3,12 @@ html {
 }
 
 .navbar {
-    background-color: #3d424d;
+    background: #e71717;
     height: auto;
 }
 
 .navbar .btn {
-    background-color: #3d424d;
+    background: #e71717;
 }
 
 .navbar .burger {
@@ -20,7 +20,7 @@ html {
 }
 
 .navbar div {
-    background-color: #3d424d;
+    background-color: #e71717;
 }
 
 .navbar input {
@@ -42,29 +42,30 @@ html {
     width: 60vh;
     flex-direction: column;
     margin: auto;
-    align-items: center;
+    align-items: stretch;
 }
 
 .history-field-row {
     height: 5vh;
-    width: 100%;
-    border-radius: 1vh;
-    background: #dadce0;
+    display: flex;
     align-items: center;
-    padding-left: 3vh;
-    margin: 4vh 1vh 0 1vh;
+    justify-content: flex-start;
+    border-radius: 1vh 1vh 0vh 0vh;
+    padding-left: 1vh;
+    background: rgb(212, 212, 212);
+    margin: 4vh 1vh 0vh 1vh;
 }
 
 .input-field-row {
     height: 10vh;
-    width: 100%;
     display: flex;
-    border-radius: 1vh;
     align-items: center;
     justify-content: flex-end;
-    background: #dadce0;
-    padding-right: 3vh;
-    margin: 0.5vh 3vh 0.5vh 3vh;
+    font-size: 2.5rem;
+    border-radius: 0vh 0vh 1vh 1vh;
+    padding-right: 1vh;
+    background: rgb(224, 224, 224);
+    margin: 0vh 1vh 0.5vh 1vh;
 }
 
 .parent-row {
