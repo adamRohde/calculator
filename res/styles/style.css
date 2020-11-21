@@ -1,5 +1,5 @@
 html {
-    background-color: #272727;
+    background-color: #ffffff;
 }
 
 .navbar {
@@ -39,29 +39,39 @@ html {
 
 .parent-parent {
     display: flex;
+    width: 60vh;
     flex-direction: column;
-    justify-content: center;
+    margin: auto;
     align-items: center;
 }
 
-.input-field-row {
-    height: 11vh;
-    width: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: rgb(255, 255, 255);
-    border: 1px black;
+.history-field-row {
+    height: 5vh;
+    width: 100%;
+    border-radius: 1vh;
+    background: #dadce0;
     align-items: center;
-    margin: 0.5vh 0 0 0;
+    padding-left: 3vh;
+    margin: 4vh 1vh 0 1vh;
+}
+
+.input-field-row {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    border-radius: 1vh;
+    align-items: center;
+    justify-content: flex-end;
+    background: #dadce0;
+    padding-right: 3vh;
+    margin: 0.5vh 3vh 0.5vh 3vh;
 }
 
 .parent-row {
     height: 10vh;
     width: 60vh;
     display: flex;
-    justify-content: space-evenly;
-    background: rgb(161, 167, 155);
+    background: rgb(255, 255, 255);
     margin: 0.5vh 0 0.5vh 0;
 }
 
@@ -69,7 +79,8 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: 100px; */
+    border-radius: 1vh;
+    width: 100px;
     margin: 0 0 0 1vh;
     background: #dadce0;
     flex-grow: 1;
@@ -79,38 +90,42 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: 100px; */
+    border-radius: 1vh;
+    width: 100px;
     margin: 0 0 0 1vh;
     background: #dadce0;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 .child3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: 100px; */
+    border-radius: 1vh;
+    width: 100px;
     margin: 0 0 0 1vh;
     background: #dadce0;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 .child4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: 100px; */
+    border-radius: 1vh;
+    width: 100px;
     margin: 0 1vh 0 1vh;
     background: #dadce0;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 .the-zero {
-    /* margin: 0 1.25vh 0 1.25vh; */
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 1vh;
+    width: 100px;
     margin: 0 0 0 1vh;
     background: #dadce0;
-    flex-grow: 2;
+    flex-grow: 1;
 }
