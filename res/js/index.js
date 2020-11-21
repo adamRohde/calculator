@@ -47,7 +47,14 @@ function updateHistoryField(input) {
 }
 
 function equalsButton() {
-    inputField.textContent = eval(historyField.textContent);
+    try {
+        inputField.textContent = eval(historyField.textContent);
+    } catch (e) {
+        if (e instanceof SyntaxError) {
+            historyField.textContent = "invalid";
+            console.log(e.message);
+        }
+    }
 }
 
 function checkForIncompleteExpression() {
