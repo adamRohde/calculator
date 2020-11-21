@@ -1,5 +1,5 @@
 html {
-    background-color: #1e1e1e;
+    background-color: #272727;
 }
 
 .navbar {
@@ -29,4 +29,88 @@ html {
 
 .navbar label {
     color: #e0d4e4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.parent-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field-row {
+    height: 11vh;
+    width: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    border: 1px black;
+    align-items: center;
+    margin: 0.5vh 0 0 0;
+}
+
+.parent-row {
+    height: 10vh;
+    width: 60vh;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(161, 167, 155);
+    margin: 0.5vh 0 0.5vh 0;
+}
+
+.child1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100px; */
+    margin: 0 0 0 1vh;
+    background: #dadce0;
+    flex-grow: 1;
+}
+
+.child2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100px; */
+    margin: 0 0 0 1vh;
+    background: #dadce0;
+    flex-grow: 1;
+}
+
+.child3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100px; */
+    margin: 0 0 0 1vh;
+    background: #dadce0;
+    flex-grow: 1;
+}
+
+.child4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100px; */
+    margin: 0 1vh 0 1vh;
+    background: #dadce0;
+    flex-grow: 1;
+}
+
+.the-zero {
+    /* margin: 0 1.25vh 0 1.25vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 1vh;
+    background: #dadce0;
+    flex-grow: 2;
 }

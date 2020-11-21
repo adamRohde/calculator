@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>base-template</title>
+      <title>Calculator</title>
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">      
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">      
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
 
         <link rel="stylesheet" href="./res/styles/style.css">
 
-      <!-- Come back to this.  I'm curious if there is a way to do this... -->
-      <!-- <script type="text/html" src="./res/res.html"></script> -->
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-xl">    
+    <!-- <nav class="navbar navbar-expand-xl">    
         <div class="dropdown">
              <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">            
                 <div class="burger"></div>
@@ -42,9 +44,80 @@
                 </a> 
             </div>
         </div>
-    </nav>
+    </nav> -->
 
-
-        <script type="text/javascript" src="http://localhost/digitalclock/res/js/index.js"></script>
+<div class="parent-parent">
+    <div class="input-field-row" id="display-field">
+        
+    </div>
+    <div class="parent-row">
+        <div class="child1" onclick="clearInputField()">
+            <h3>AC</h3>
+        </div>
+        <div class="child2">
+            <h3>+/-</h3>
+        </div>
+        <div class="child3">
+            <h3>%</h3>
+        </div>
+        <div class="child4">
+            <h3>/</h3>
+        </div>   
+    </div>
+    <div class="parent-row">
+        <div class="child1" id="seven-button" onclick="numberClicked(7)">
+            <h3>7</h3>
+        </div>
+        <div class="child2" id="eight-button" onclick="numberClicked(8)">
+            <h3>8</h3>
+        </div>
+        <div class="child3" id="nine-button" onclick="numberClicked(9)">
+            <h3>9</h3>
+        </div>
+        <div class="child4">
+            <h3>x</h3>
+        </div>   
+    </div>
+    <div class="parent-row">
+        <div class="child1" id="four-button" onclick="numberClicked(4)">
+            <h3>4</h3>
+        </div>
+        <div class="child2" id="five-button" onclick="numberClicked(5)">
+            <h3>5</h3>
+        </div>
+        <div class="child3" id="six-button" onclick="numberClicked(6)">
+            <h3>6</h3>
+        </div>
+        <div class="child4">
+            <h3>-</h3>
+        </div>   
+    </div>
+    <div class="parent-row">
+        <div class="child1" id="one-button" onclick="numberClicked(1)">
+            <h3>1</h3>
+        </div>
+        <div class="child2" id="two-button" onclick="numberClicked(2)">
+            <h3>2</h3>
+        </div>
+        <div class="child3" id="three-button" onclick="numberClicked(3)">
+            <h3>3</h3>
+        </div>
+        <div class="child4">
+            <h3>+</h3>
+        </div>   
+    </div>
+    <div class="parent-row">
+        <div class="the-zero">
+            <h3>0</h3>
+        </div>
+        <div class="child3">
+            <h3>.</h3>
+        </div>
+        <div class="child4">
+            <h3>=</h3>
+        </div>   
+    </div>
+</div>
+        <script type="text/javascript" src="http://localhost/css-flexbox-template/res/js/index.js"></script>
   </body>
 </html>
