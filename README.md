@@ -4,7 +4,9 @@ Simple calculator app using vanilla js.  The app also incorporates a dark or lig
 https://adamrohde.github.io/calculator/
 
 ### Image
-![alt text](https://github.com/adamRohde/calculator/blob/master/calculator-preview.jpg)
+![alt text](https://github.com/adamRohde/calculator/blob/master/calculator-dark-preview.jpg)
+![alt text](https://github.com/adamRohde/calculator/blob/master/calculator-light-preview.jpg)
+
 
 
 
