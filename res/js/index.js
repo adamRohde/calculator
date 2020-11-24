@@ -5,6 +5,7 @@ const historyField = document.getElementById("history-field");
 
 document.onkeydown = function (e) {
     if (
+        e.key == "." ||
         e.key == "0" ||
         e.key == "1" ||
         e.key == "2" ||
