@@ -77,8 +77,6 @@ document.getElementById("plus-button").addEventListener("click", () => {
 
 document.getElementById("equals-button").addEventListener("click", () => {
     arrayBuilder("=", "sym");
-    equalsButton();
-    // expressionBuilder();
 });
 document.getElementById("clear-button").addEventListener("click", () => {
     clearInputField();
@@ -164,9 +162,13 @@ function arrayBuilder(newChar, numOrSym) {
 
             if (newChar == ".") {
 
+                inputField.textContent = " ";
+
                 characterArray.push("0.");
 
             } else {
+
+                inputField.textContent = " ";
 
                 characterArray.push(newChar);
 
@@ -177,9 +179,12 @@ function arrayBuilder(newChar, numOrSym) {
             console.log("Please Enter Number for first entry");
 
         }
+
     }else if (numOrSym != lastKeyNumOrSym){
 
-        //console.log("Things seem different... better push");
+        inputField.textContent = " ";
+
+        console.log("Things seem different... better push");
         
         characterArray.push(newChar);
         
@@ -187,7 +192,7 @@ function arrayBuilder(newChar, numOrSym) {
             
             //console.log("time to solve this hummdinger");
 
-            newChar == "=" ? numOrSym = "num" :  console.log("nothing to see hear... specifically a enter...");
+            newChar == "=" ? numOrSym = "dif" :  console.log("nothing to see hear... specifically a enter...");
 
             solveFunction(characterArray[0], characterArray[1], characterArray[2]);
 
@@ -197,13 +202,13 @@ function arrayBuilder(newChar, numOrSym) {
 
         if (isNaN(newChar) && newChar!="."){
 
-            //console.log("No multiple operators!!!");
+            console.log("No multiple operators!!!");
 
         }else{
 
-            characterArray[characterArray.length - 1] =characterArray[characterArray.length - 1] + newChar;  
+            characterArray[characterArray.length - 1] = characterArray[characterArray.length - 1] + newChar;  
             
-            //console.log("We on concatenate street");console.log(characterArray);
+            console.log("We on concatenate street");console.log(characterArray);
 
         }
       
@@ -233,8 +238,6 @@ function solveFunction(expression1, operator, expression2) {
             answer = parseFloat(expression1) / parseFloat(expression2);
             break;
     }
-
-    console.log("This is the answer...  " + answer);
     
     characterArray.shift(); characterArray.shift();
     
@@ -250,8 +253,6 @@ function solveFunction(expression1, operator, expression2) {
 
 
 function numberClicked(number) {
-    
-    checkForIncompleteExpression();
     
     updateHistoryField(number);
     
@@ -271,16 +272,18 @@ function operatorClicked(operator) {
 
 function updateInputField(input) {
 
-    inputField.textContent = input;
+//    inputField.textContent = cutDecimalPlacesToLength(input);
+
+      inputField.textContent = input;
 
 }
 
 
-// function updateHistoryField(input) {
+function updateHistoryField(input) {
 
-//     historyField.textContent = historyField.textContent + input;
+    historyField.textContent = historyField.textContent + input;
 
-// }
+}
 
 // function equalsButton() {
 
@@ -291,19 +294,15 @@ function updateInputField(input) {
 // }
 
 
-function checkForIncompleteExpression() {
+// function checkForIncompleteExpression() {
 
-    if (operatorCharacters.includes(historyField.textContent.slice(-1))) {
+//     if (operatorCharacters.includes(historyField.textContent.slice(-1))) {
 
-        inputField.textContent = " ";
+//         inputField.textContent = " ";
 
-    } else {
+//     } 
 
-        // console.log("byte there");
-
-    }
-
-}
+// }
 
 
 function clearInputField() {
@@ -342,3 +341,8 @@ let cutDecimalPlacesToLength = function (value) {
 };
 
 
+window.onload = () => {
+
+    inputField.textContent = 0;
+
+};
