@@ -1,13 +1,4 @@
-let swatches = document.querySelectorAll(".swatches span");
-
 let root = document.querySelector(":root");
-
-swatches.forEach((swatch) => {
-    swatch.addEventListener("click", (e) => {
-        root.style.setProperty("--theme-color-nav", e.target.style.background);
-        console.log("hello");
-    });
-});
 
 document.getElementById("dark-mode").onclick = function () {
     root.style.setProperty("--theme-color-nav", "rgb(73, 73, 73)");
