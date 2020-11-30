@@ -1,78 +1,54 @@
 //console.log("Hello there");
 document.getElementById("zero-button").addEventListener("click", () => {
     arrayBuilder("0", "num");
-    numberClicked("0");
-    // expressionBuilder();
+});
+document.getElementById("decimal-button").addEventListener("click", () => {
+    arrayBuilder(".", "num");
 });
 document.getElementById("one-button").addEventListener("click", () => {
     arrayBuilder("1", "num");
-    numberClicked("1");
-    // expressionBuilder();
 });
 document.getElementById("two-button").addEventListener("click", () => {
     arrayBuilder("2", "num");
-    numberClicked("2");
-    // expressionBuilder();
 });
 document.getElementById("three-button").addEventListener("click", () => {
     arrayBuilder("3", "num");
-    numberClicked("3");
-    // expressionBuilder();
 });
 document.getElementById("four-button").addEventListener("click", () => {
     arrayBuilder("4", "num");
-    numberClicked("4");
-    // expressionBuilder();
 });
 document.getElementById("five-button").addEventListener("click", () => {
     arrayBuilder("5", "num");
-    numberClicked("5");
-    // expressionBuilder();
 });
 document.getElementById("six-button").addEventListener("click", () => {
     arrayBuilder("6", "num");
-    numberClicked("6");
-    // expressionBuilder();
 });
 document.getElementById("seven-button").addEventListener("click", () => {
     arrayBuilder("7", "num");
-    numberClicked("7");
-    // expressionBuilder();
 });
 document.getElementById("eight-button").addEventListener("click", () => {
     arrayBuilder("8", "num");
-    numberClicked("8");
-    // expressionBuilder();
 });
 document.getElementById("nine-button").addEventListener("click", () => {
     arrayBuilder("9", "num");
-    numberClicked("9");
-    // expressionBuilder();
 });
 
 // document.getElementById("percentage-button").addEventListener("click", () => {
 //     arrayBuilder("%");
 //     numberClicked("%");
 // });
+
 document.getElementById("divide-button").addEventListener("click", () => {
     arrayBuilder("/", "sym");
-    operatorClicked("/");
-    // expressionBuilder();
 });
 document.getElementById("multiply-button").addEventListener("click", () => {
     arrayBuilder("*", "sym");
-    operatorClicked("*");
-    // expressionBuilder();
 });
 document.getElementById("minus-button").addEventListener("click", () => {
     arrayBuilder("-", "sym");
-    operatorClicked("-");
-    // expressionBuilder();
 });
 document.getElementById("plus-button").addEventListener("click", () => {
     arrayBuilder("+", "sym");
-    operatorClicked("+");
-    // expressionBuilder();
 });
 
 document.getElementById("equals-button").addEventListener("click", () => {
@@ -81,6 +57,7 @@ document.getElementById("equals-button").addEventListener("click", () => {
 document.getElementById("clear-button").addEventListener("click", () => {
     clearInputField();
 });
+
 
 const inputField = document.getElementById("display-field");
 const historyField = document.getElementById("history-field");
@@ -118,7 +95,7 @@ document.onkeydown = function (e) {
 
             arrayBuilder(e.key, "num");
 
-            numberClicked(e.key);
+            //numberClicked(e.key);
 
     } else if (
 
@@ -134,7 +111,7 @@ document.onkeydown = function (e) {
 
             arrayBuilder(e.key, "sym");
 
-            operatorClicked(e.key);
+           // operatorClicked(e.key);
 
     } else if (
 
@@ -155,28 +132,26 @@ document.onkeydown = function (e) {
 };
 
 function arrayBuilder(newChar, numOrSym) {
+  
+    let displayYesorNo = 1;
 
-    if (0 == characterArray.length) {
+    if (0 == characterArray.length){
 
-        if (!isNaN(newChar) || newChar == ".") {
+        console.log("No array at the moment, lets change that"); console.log(characterArray);
 
-            if (newChar == ".") {
 
+        if (newChar == "." && numOrSym == "num") {
+      
                 inputField.textContent = " ";
-
+                console.log("starting small huh?");
                 characterArray.push("0.");
-
-            } else {
-
-                inputField.textContent = " ";
-
-                characterArray.push(newChar);
-
-            }
-
+                console.log(characterArray);
         } else {
 
-            console.log("Please Enter Number for first entry");
+            inputField.textContent = " ";
+            console.log("incoming!");
+            characterArray.push(newChar);
+            console.log(characterArray);
 
         }
 
@@ -184,15 +159,16 @@ function arrayBuilder(newChar, numOrSym) {
 
         inputField.textContent = " ";
 
-        console.log("Things seem different... better push");
-        
         characterArray.push(newChar);
+        
+        console.log("Things seem different... better push");console.log(characterArray);
         
         if (isNaN(newChar) && characterArray.length >= 3){
             
-            //console.log("time to solve this hummdinger");
+            console.log("time to solve this hummdinger");console.log(characterArray);
 
-            newChar == "=" ? numOrSym = "dif" :  console.log("nothing to see hear... specifically a enter...");
+            void(newChar=="=" && (numOrSym = "dif"));
+            console.log("num or Sym = " + numOrSym);
 
             solveFunction(characterArray[0], characterArray[1], characterArray[2]);
 
@@ -202,7 +178,9 @@ function arrayBuilder(newChar, numOrSym) {
 
         if (isNaN(newChar) && newChar!="."){
 
-            console.log("No multiple operators!!!");
+            console.log("No multiple operators!!!");console.log(characterArray);
+
+            displayYesorNo = 0;
 
         }else{
 
@@ -215,6 +193,8 @@ function arrayBuilder(newChar, numOrSym) {
     }
 
     lastKeyNumOrSym= numOrSym;
+
+    displayNumberOrSymbol(newChar, numOrSym, displayYesorNo);
 
 }
 
@@ -251,30 +231,38 @@ function solveFunction(expression1, operator, expression2) {
 
 }
 
+function displayNumberOrSymbol(char, numOrSymb, displayYesOrNo) {
 
-function numberClicked(number) {
-    
-    updateHistoryField(number);
-    
-    currentValueInFocus = inputField.textContent + number;
-    
-    updateInputField(currentValueInFocus);
+    if (displayYesOrNo){
 
+        switch (numOrSymb) {
+
+            case "num":
+                updateHistoryField(char);
+                currentValueInFocus = inputField.textContent + char;
+                updateInputField(currentValueInFocus);
+                break;
+
+            case "sym":
+
+                updateHistoryField(char);
+
+                break;
+        }
+
+    }else{
+
+        console.log("not gonna happens");
+
+    }
+    
 }
-
-
-function operatorClicked(operator) {
-    
-    updateHistoryField(operator);
-
-}
-
 
 function updateInputField(input) {
 
-//    inputField.textContent = cutDecimalPlacesToLength(input);
+   // inputField.textContent = cutDecimalPlacesToLength(input);
 
-      inputField.textContent = input;
+    inputField.textContent = input;
 
 }
 
@@ -285,26 +273,6 @@ function updateHistoryField(input) {
 
 }
 
-// function equalsButton() {
-
-//     console.log("equals");
-//     console.log(characterArray[characterArray.length - 1]);
-//     expressionBuilder(1);
-
-// }
-
-
-// function checkForIncompleteExpression() {
-
-//     if (operatorCharacters.includes(historyField.textContent.slice(-1))) {
-
-//         inputField.textContent = " ";
-
-//     } 
-
-// }
-
-
 function clearInputField() {
 
     inputField.textContent = " ";
@@ -312,6 +280,9 @@ function clearInputField() {
     historyField.textContent = " ";
 
     characterArray = [];
+
+    inputField.textContent = 0;
+
 
 }
 
@@ -344,5 +315,7 @@ let cutDecimalPlacesToLength = function (value) {
 window.onload = () => {
 
     inputField.textContent = 0;
+
+    console.log("Please something work!, onload maybe?");
 
 };
