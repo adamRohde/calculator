@@ -5,6 +5,8 @@ let characterArray = new Array();
 let lastKeyNumOrSym;
 
 function arrayBuilder(newChar, numOrSym) {
+    //void (characterArray[characterArray.length - 1] == "%" && characterArray.pop());
+
     let displayYesorNo = 1;
 
     if (0 == characterArray.length) {
@@ -17,9 +19,13 @@ function arrayBuilder(newChar, numOrSym) {
             characterArray.push(newChar);
         }
     } else if (numOrSym != lastKeyNumOrSym) {
-        inputField.textContent = " ";
+        if (isNaN(characterArray[characterArray.length - 1])) {
+            inputField.textContent = " ";
+            console.log("condition to clear.....I hope");
+        }
 
         characterArray.push(newChar);
+        console.log("Post push " + characterArray);
 
         if (isNaN(newChar) && characterArray.length >= 3) {
             void (newChar == "=" && (numOrSym = "dif"));
@@ -51,7 +57,11 @@ function solveFunction(expression1, operator, expression2) {
             answer = parseFloat(expression1) * parseFloat(expression2);
             break;
         case "/":
-            answer = parseFloat(expression1) / parseFloat(expression2);
+            if (0 == parseFloat(expression2)) {
+                answer = "no Div/0";
+            } else {
+                answer = parseFloat(expression1) / parseFloat(expression2);
+            }
             break;
     }
 
@@ -59,6 +69,7 @@ function solveFunction(expression1, operator, expression2) {
     characterArray.shift();
     characterArray[0] = answer;
     updateInputField(answer);
+
     void (characterArray[characterArray.length - 1] == "=" && characterArray.pop());
 }
 
@@ -75,18 +86,22 @@ function displayNumberOrSymbol(char, numOrSymb, displayYesOrNo) {
                 updateHistoryField(char);
                 break;
         }
-    } else {
-        console.log("not gonna happens");
     }
 }
 
 function updateInputField(input) {
+    console.log(characterArray);
+
+    inputField.textContent = input;
+
     if (0 != input % 1) {
         strInput = input;
-        if (strInput.toString().length > 12) {
-            inputField.textContent = input.toFixed(12);
+        if (strInput.toString().length > 8) {
+            inputField.textContent = " ";
+            inputField.textContent = input.toFixed(8);
         }
     } else {
+        inputField.textContent = " ";
         inputField.textContent = input;
     }
 }
@@ -103,6 +118,13 @@ function clearInputField() {
     characterArray = [];
 
     inputField.textContent = 0;
+}
+
+function percentageFunction() {
+    characterArray[0] = [];
+    characterArray[0] = inputField.textContent * 0.01;
+    updateHistoryField("= " + characterArray[0] + "%");
+    updateInputField(characterArray[0]);
 }
 
 window.onload = () => {
