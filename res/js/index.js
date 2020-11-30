@@ -121,9 +121,23 @@ function clearInputField() {
 }
 
 function percentageFunction() {
-    characterArray[0] = [];
+    characterArray = [];
     characterArray[0] = inputField.textContent * 0.01;
     updateHistoryField("= " + characterArray[0] + "%");
+    updateInputField(characterArray[0]);
+}
+
+function plusMinusFunction() {
+    console.log("we plussin and a minusin");
+    characterArray = [];
+
+    if (inputField.textContent > 0) {
+        characterArray[0] = -Math.abs(inputField.textContent);
+    } else if (inputField.textContent < 0) {
+        characterArray[0] = Math.abs(inputField.textContent);
+    }
+
+    updateHistoryField("=> " + characterArray[0]);
     updateInputField(characterArray[0]);
 }
 

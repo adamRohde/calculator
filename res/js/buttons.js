@@ -52,6 +52,11 @@ document.getElementById("plus-button").addEventListener("click", () => {
 document.getElementById("equals-button").addEventListener("click", () => {
     arrayBuilder("=", "sym");
 });
+
+document.getElementById("plus-minus-button").addEventListener("click", () => {
+    plusMinusFunction();
+});
+
 document.getElementById("clear-button").addEventListener("click", () => {
     clearInputField();
 });
