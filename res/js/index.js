@@ -1,14 +1,24 @@
+
+
+
+
+
+
 const inputField = document.getElementById("display-field");
 const historyField = document.getElementById("history-field");
 let currentValueInFocus;
 let characterArray = new Array();
 let lastKeyNumOrSym;
 
+
+
+
+
+
 function arrayBuilder(newChar, numOrSym) {
-    //void (characterArray[characterArray.length - 1] == "%" && characterArray.pop());
-
     let displayYesorNo = 1;
-
+    
+    //Hello?  is there anybody in there??
     if (0 == characterArray.length) {
         if (newChar == "." && numOrSym == "num") {
             inputField.textContent = " ";
@@ -18,20 +28,36 @@ function arrayBuilder(newChar, numOrSym) {
             inputField.textContent = " ";
             characterArray.push(newChar);
         }
+
+
+    //Important part 1 = push!    
     } else if (numOrSym != lastKeyNumOrSym) {
+
         if (isNaN(characterArray[characterArray.length - 1])) {
             inputField.textContent = " ";
-            console.log("condition to clear.....I hope");
         }
 
-        characterArray.push(newChar);
-        console.log("Post push " + characterArray);
+        if (newChar == ".") {
+            //console.log("I found a decimal captain");
+            inputField.textContent = " ";
+            newChar = "0.";
+            characterArray.push("0.");
 
-        if (isNaN(newChar) && characterArray.length >= 3) {
-            void (newChar == "=" && (numOrSym = "dif"));
-            solveFunction(characterArray[0], characterArray[1], characterArray[2]);
+        }else{
+
+            characterArray.push(newChar);
+            //console.log("Just did some pushin " + characterArray);
+    
+            if (isNaN(newChar) && characterArray.length >= 3) {
+                void (newChar == "=" && (numOrSym = "dif"));
+                solveFunction(characterArray[0], characterArray[1], characterArray[2]);
+            }
+
         }
+
+    //Important part 2 - concantenation highway
     } else if (numOrSym == lastKeyNumOrSym) {
+
         if (isNaN(newChar) && newChar != ".") {
             displayYesorNo = 0;
         } else {
@@ -39,11 +65,20 @@ function arrayBuilder(newChar, numOrSym) {
                 characterArray[characterArray.length - 1] + newChar;
         }
     }
-    lastKeyNumOrSym = numOrSym;
+
+    lastKeyNumOrSym = numOrSym; //the decision maker
+
     displayNumberOrSymbol(newChar, numOrSym, displayYesorNo);
+
 }
 
+
+
+
+
+
 function solveFunction(expression1, operator, expression2) {
+
     let answer;
 
     switch (operator) {
@@ -64,14 +99,20 @@ function solveFunction(expression1, operator, expression2) {
             }
             break;
     }
+    characterArray.shift(); characterArray.shift();
 
-    characterArray.shift();
-    characterArray.shift();
     characterArray[0] = answer;
+
     updateInputField(answer);
 
     void (characterArray[characterArray.length - 1] == "=" && characterArray.pop());
+
 }
+
+
+
+
+
 
 function displayNumberOrSymbol(char, numOrSymb, displayYesOrNo) {
     if (displayYesOrNo) {
@@ -89,9 +130,13 @@ function displayNumberOrSymbol(char, numOrSymb, displayYesOrNo) {
     }
 }
 
+
+
+
+
+
 function updateInputField(input) {
     console.log(characterArray);
-
     inputField.textContent = input;
 
     if (0 != input % 1) {
@@ -106,19 +151,31 @@ function updateInputField(input) {
     }
 }
 
+
+
+
+
+
 function updateHistoryField(input) {
-    historyField.textContent = historyField.textContent + input;
+    historyField.textContent = historyField.textContent  + input;
 }
+
+
+
+
+
 
 function clearInputField() {
     inputField.textContent = " ";
-
     historyField.textContent = " ";
-
     characterArray = [];
-
     inputField.textContent = 0;
 }
+
+
+
+
+
 
 function percentageFunction() {
     characterArray = [];
@@ -126,6 +183,11 @@ function percentageFunction() {
     updateHistoryField("= " + characterArray[0] + "%");
     updateInputField(characterArray[0]);
 }
+
+
+
+
+
 
 function plusMinusFunction() {
     console.log("we plussin and a minusin");
@@ -140,6 +202,11 @@ function plusMinusFunction() {
     updateHistoryField("=> " + characterArray[0]);
     updateInputField(characterArray[0]);
 }
+
+
+
+
+
 
 window.onload = () => {
     inputField.textContent = 0;

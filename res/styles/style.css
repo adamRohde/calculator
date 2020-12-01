@@ -1,11 +1,10 @@
 :root {
     --theme-color-nav: #494949;
     --theme-color-back: #131313;
-    --theme-color-keys: #0e4f9e;
-    --theme-color-keys-secondary: #8fb3e0;
-
-    --theme-color-text: #fafcff;
-    --theme-color-burger: #f1f1f1;
+    --theme-color-keys: #5ba5ff;
+    --theme-color-keys-secondary: #cde2fc;
+    --theme-color-text: #000000;
+    --theme-color-burger: #d1d1d1;
 }
 
 html {
@@ -94,6 +93,14 @@ body {
     margin: 0.5vh 0 0.5vh 0;
 }
 
+button {
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+}
+
 .child1 {
     display: flex;
     align-items: center;
@@ -152,12 +159,4 @@ body {
     background: var(--theme-color-keys);
     color: var(--theme-color-text);
     flex-grow: 1;
-}
-
-.swatches span {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 10px;
-    cursor: pointer;
 }

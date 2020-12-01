@@ -3,10 +3,10 @@ let root = document.querySelector(":root");
 document.getElementById("dark-mode").onclick = function () {
     root.style.setProperty("--theme-color-nav", "rgb(73, 73, 73)");
     root.style.setProperty("--theme-color-back", "#131313");
-    root.style.setProperty("--theme-color-keys", "#0E4F9E");
+    root.style.setProperty("--theme-color-keys", "#5ba5ff");
     root.style.setProperty("--theme-color-keys-secondary", "#8FB3E0");
-    root.style.setProperty("--theme-color-text", "rgb(255, 255, 255)");
-    root.style.setProperty("--theme-color-burger", "rgb(255, 255, 255)");
+    root.style.setProperty("--theme-color-text", "#000000");
+    root.style.setProperty("--theme-color-burger", "#d1d1d1");
 };
 
 document.getElementById("light-mode").onclick = function () {

@@ -1,4 +1,3 @@
-//console.log("Hello there");
 document.getElementById("zero-button").addEventListener("click", () => {
     arrayBuilder("0", "num");
 });
@@ -76,12 +75,8 @@ document.onkeydown = function (e) {
         e.key == "9"
     ) {
         arrayBuilder(e.key, "num");
-
-        //numberClicked(e.key);
     } else if (e.key == "%" || e.key == "/" || e.key == "*" || e.key == "-" || e.key == "+") {
         arrayBuilder(e.key, "sym");
-
-        // operatorClicked(e.key);
     } else if (e.key == "Backspace" || e.key == "Delete") {
         clearInputField();
     } else if (e.key === "Enter") {
