@@ -16,6 +16,7 @@ let lastKeyNumOrSym;
 
 
 function arrayBuilder(newChar, numOrSym) {
+    
     let displayYesorNo = 1;
     
     //Hello?  is there anybody in there??
@@ -29,7 +30,6 @@ function arrayBuilder(newChar, numOrSym) {
             characterArray.push(newChar);
         }
 
-
     //Important part 1 = push!    
     } else if (numOrSym != lastKeyNumOrSym) {
 
@@ -42,9 +42,7 @@ function arrayBuilder(newChar, numOrSym) {
             inputField.textContent = " ";
             newChar = "0.";
             characterArray.push("0.");
-
         }else{
-
             characterArray.push(newChar);
             //console.log("Just did some pushin " + characterArray);
     
@@ -52,7 +50,6 @@ function arrayBuilder(newChar, numOrSym) {
                 void (newChar == "=" && (numOrSym = "dif"));
                 solveFunction(characterArray[0], characterArray[1], characterArray[2]);
             }
-
         }
 
     //Important part 2 - concantenation highway
@@ -65,9 +62,7 @@ function arrayBuilder(newChar, numOrSym) {
                 characterArray[characterArray.length - 1] + newChar;
         }
     }
-
     lastKeyNumOrSym = numOrSym; //the decision maker
-
     displayNumberOrSymbol(newChar, numOrSym, displayYesorNo);
 
 }
@@ -100,11 +95,8 @@ function solveFunction(expression1, operator, expression2) {
             break;
     }
     characterArray.shift(); characterArray.shift();
-
     characterArray[0] = answer;
-
     updateInputField(answer);
-
     void (characterArray[characterArray.length - 1] == "=" && characterArray.pop());
 
 }
