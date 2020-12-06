@@ -8,6 +8,6 @@ Link to app
 ![alt text](https://github.com/adamRohde/calculator/blob/master/calculator-dark-preview.jpg)
 ![alt text](https://github.com/adamRohde/calculator/blob/master/calculator-light-preview.jpg)
 
-Author Adam Rohde
+Author - Adam Rohde
 
 
